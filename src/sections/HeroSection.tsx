@@ -137,9 +137,10 @@ export default function HeroSection({ className = '' }: HeroSectionProps) {
           ))}
         </h1>
         <p className="text-lg text-[#A6ACB8] leading-relaxed max-w-xl mb-8">
-          We build production-ready systems that ingest invoices, CSVs, and scanned
-          documents via OCR — compare suppliers, track compliance, and deliver
-          decision dashboards — fast.
+          We transform your operational chaos into intelligent systems. From automated 
+          document processing and supplier analytics to compliance tracking and executive 
+          dashboards — we build end-to-end business intelligence solutions that scale with 
+          your growth, fast.
         </p>
       </div>
     </section>
