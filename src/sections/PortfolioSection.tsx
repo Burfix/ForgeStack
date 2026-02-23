@@ -16,7 +16,21 @@ interface PortfolioSectionProps {
   className?: string;
 }
 
-const systems = [
+interface SystemDetails {
+  features: string[];
+  tech: string[];
+  timeline: string;
+  link?: string;
+}
+
+interface System {
+  image: string;
+  title: string;
+  description: string;
+  details: SystemDetails;
+}
+
+const systems: System[] = [
   {
     image: '/portfolio_supplier_tool.jpg',
     title: 'Supplier Pricing Intelligence Tool',
@@ -71,6 +85,25 @@ const systems = [
       timeline: '5-6 weeks',
     },
   },
+  {
+    image: '/dashboard_q4_overview.jpg',
+    title: 'Preschool Management App',
+    description:
+      'Complete preschool administration platform with student management, attendance tracking, and parent communication.',
+    details: {
+      features: [
+        'Student enrollment and profiles',
+        'Daily attendance tracking',
+        'Parent portal and notifications',
+        'Class scheduling and management',
+        'Fee collection and invoicing',
+        'Progress reports and assessments',
+      ],
+      tech: ['Next.js', 'React', 'TypeScript', 'PostgreSQL', 'Tailwind CSS'],
+      timeline: '6-8 weeks',
+      link: 'https://www.projectgumpo.space',
+    },
+  },
 ];
 
 export default function PortfolioSection({ className = '' }: PortfolioSectionProps) {
@@ -78,7 +111,7 @@ export default function PortfolioSection({ className = '' }: PortfolioSectionPro
   const headingRef = useRef<HTMLDivElement>(null);
   const cardsRef = useRef<HTMLDivElement>(null);
   const [dialogOpen, setDialogOpen] = useState(false);
-  const [selectedSystem, setSelectedSystem] = useState<(typeof systems)[0] | null>(null);
+  const [selectedSystem, setSelectedSystem] = useState<System | null>(null);
 
   useLayoutEffect(() => {
     const ctx = gsap.context(() => {
@@ -138,7 +171,7 @@ export default function PortfolioSection({ className = '' }: PortfolioSectionPro
     return () => ctx.revert();
   }, []);
 
-  const handleSeeDetails = (system: (typeof systems)[0]) => {
+  const handleSeeDetails = (system: System) => {
     setSelectedSystem(system);
     setDialogOpen(true);
   };
@@ -265,13 +298,26 @@ export default function PortfolioSection({ className = '' }: PortfolioSectionPro
                 </div>
 
                 {/* CTA */}
-                <div className="pt-4">
+                <div className="pt-4 space-y-3">
+                  {selectedSystem.details.link && (
+                    <a
+                      href={selectedSystem.details.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="btn-primary w-full flex items-center justify-center gap-2"
+                    >
+                      View Live Site
+                      <ArrowRight size={18} />
+                    </a>
+                  )}
                   <button
                     onClick={() => {
                       setDialogOpen(false);
                       document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' });
                     }}
-                    className="btn-primary w-full flex items-center justify-center gap-2"
+                    className={`btn-secondary w-full flex items-center justify-center gap-2 ${
+                      !selectedSystem.details.link ? 'btn-primary' : ''
+                    }`}
                   >
                     Discuss This Project
                     <ArrowRight size={18} />
