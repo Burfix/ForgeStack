@@ -1,7 +1,6 @@
 import { useEffect, useRef, useLayoutEffect } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { ArrowRight } from 'lucide-react';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -13,7 +12,6 @@ export default function HeroSection({ className = '' }: HeroSectionProps) {
   const sectionRef = useRef<HTMLElement>(null);
   const photoRef = useRef<HTMLDivElement>(null);
   const textRef = useRef<HTMLDivElement>(null);
-  const ctaRef = useRef<HTMLDivElement>(null);
   const labelsRef = useRef<HTMLDivElement>(null);
 
   // Entrance animation on load
@@ -37,12 +35,6 @@ export default function HeroSection({ className = '' }: HeroSectionProps) {
           { y: 24, opacity: 0 },
           { y: 0, opacity: 1, duration: 0.6, stagger: 0.04 },
           '-=0.3'
-        )
-        .fromTo(
-          ctaRef.current,
-          { y: 16, opacity: 0 },
-          { y: 0, opacity: 1, duration: 0.5 },
-          '-=0.3'
         );
     }, sectionRef);
 
@@ -61,7 +53,7 @@ export default function HeroSection({ className = '' }: HeroSectionProps) {
           scrub: 0.6,
           onLeaveBack: () => {
             // Reset all elements when scrolling back to top
-            gsap.set([photoRef.current, textRef.current, ctaRef.current, labelsRef.current], {
+            gsap.set([photoRef.current, textRef.current, labelsRef.current], {
               opacity: 1,
               x: 0,
               y: 0,
@@ -82,12 +74,6 @@ export default function HeroSection({ className = '' }: HeroSectionProps) {
         photoRef.current,
         { x: 0, scale: 1, opacity: 1 },
         { x: '-18vw', scale: 0.96, opacity: 0, ease: 'power2.in' },
-        0.7
-      );
-      scrollTl.fromTo(
-        ctaRef.current,
-        { y: 0, opacity: 1 },
-        { y: '10vh', opacity: 0, ease: 'power2.in' },
         0.7
       );
       scrollTl.fromTo(
@@ -162,27 +148,6 @@ export default function HeroSection({ className = '' }: HeroSectionProps) {
           documents via OCR — compare suppliers, track compliance, and deliver
           decision dashboards — fast.
         </p>
-      </div>
-
-      {/* CTA Row */}
-      <div
-        ref={ctaRef}
-        className="absolute left-[54vw] top-[84vh] w-[38vw] flex items-center gap-4"
-        style={{ willChange: 'transform, opacity' }}
-      >
-        <button
-          onClick={() => scrollToSection('#contact')}
-          className="btn-primary flex items-center gap-2"
-        >
-          Book a Discovery Call
-          <ArrowRight size={18} />
-        </button>
-        <button
-          onClick={() => scrollToSection('#portfolio')}
-          className="btn-secondary"
-        >
-          View Case Studies
-        </button>
       </div>
     </section>
   );
