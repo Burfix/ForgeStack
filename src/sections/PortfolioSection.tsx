@@ -195,12 +195,12 @@ export default function PortfolioSection({ className = '' }: PortfolioSectionPro
       {/* Portfolio Cards */}
       <div
         ref={cardsRef}
-        className="absolute left-[7vw] right-[7vw] top-[36vh] flex gap-6"
+        className="absolute left-[7vw] right-[7vw] top-[36vh] flex gap-4"
       >
         {systems.map((system, i) => (
           <div
             key={i}
-            className="portfolio-card card-dark flex-1 h-[46vh] overflow-hidden group hover:border-[#C8FF2E]/30 transition-all duration-500"
+            className="portfolio-card card-dark flex-1 min-w-0 h-[46vh] overflow-hidden group hover:border-[#C8FF2E]/30 transition-all duration-500"
             style={{ willChange: 'transform, opacity' }}
           >
             {/* Image */}
@@ -212,18 +212,18 @@ export default function PortfolioSection({ className = '' }: PortfolioSectionPro
               />
             </div>
             {/* Content */}
-            <div className="h-[40%] p-6 flex flex-col justify-between">
+            <div className="h-[40%] p-5 flex flex-col justify-between">
               <div>
-                <h3 className="font-['Space_Grotesk'] font-bold text-white text-lg mb-2">
+                <h3 className="font-['Space_Grotesk'] font-bold text-white text-base mb-2 line-clamp-2">
                   {system.title}
                 </h3>
-                <p className="text-sm text-[#A6ACB8] line-clamp-2">
+                <p className="text-xs text-[#A6ACB8] line-clamp-2">
                   {system.description}
                 </p>
               </div>
               <button
                 onClick={() => handleSeeDetails(system)}
-                className="inline-flex items-center gap-2 text-[#C8FF2E] text-sm group-hover:gap-3 transition-all w-fit"
+                className="inline-flex items-center gap-2 text-[#C8FF2E] text-xs group-hover:gap-3 transition-all w-fit"
               >
                 <span>See details</span>
                 <ArrowRight size={14} />
