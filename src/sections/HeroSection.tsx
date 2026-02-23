@@ -167,7 +167,7 @@ export default function HeroSection({ className = '' }: HeroSectionProps) {
       {/* CTA Row */}
       <div
         ref={ctaRef}
-        className="absolute left-[54vw] top-[78vh] w-[38vw] flex items-center gap-4"
+        className="absolute left-[54vw] top-[84vh] w-[38vw] flex items-center gap-4"
         style={{ willChange: 'transform, opacity' }}
       >
         <button
