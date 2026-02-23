@@ -1,14 +1,7 @@
-import { useRef, useLayoutEffect, useState } from 'react';
+import { useRef, useLayoutEffect } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { ArrowRight, Mail, Check } from 'lucide-react';
-import {
-  Dialog,
-  DialogContent,
-  DialogHeader,
-  DialogTitle,
-  DialogDescription,
-} from '@/components/ui/dialog';
+import { ArrowRight, Mail } from 'lucide-react';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -22,11 +15,6 @@ export default function CTASection({ className = '' }: CTASectionProps) {
   const textRef = useRef<HTMLDivElement>(null);
   const ctaRef = useRef<HTMLDivElement>(null);
   const barRef = useRef<HTMLDivElement>(null);
-  const [dialogOpen, setDialogOpen] = useState(false);
-  const [dialogContent, setDialogContent] = useState({
-    title: '',
-    description: '',
-  });
 
   useLayoutEffect(() => {
     const ctx = gsap.context(() => {
@@ -142,21 +130,6 @@ export default function CTASection({ className = '' }: CTASectionProps) {
         className="absolute left-0 bottom-0 w-full h-[3.5vh] bg-[#C8FF2E]"
         style={{ willChange: 'transform' }}
       />
-
-      {/* Dialog */}
-      <Dialog open={dialogOpen} onOpenChange={setDialogOpen}>
-        <DialogContent className="bg-[#111318] border border-white/10 text-white">
-          <DialogHeader>
-            <DialogTitle className="font-['Space_Grotesk'] text-xl flex items-center gap-2">
-              <Check className="text-[#C8FF2E]" size={20} />
-              {dialogContent.title}
-            </DialogTitle>
-            <DialogDescription className="text-[#A6ACB8]">
-              {dialogContent.description}
-            </DialogDescription>
-          </DialogHeader>
-        </DialogContent>
-      </Dialog>
     </section>
   );
 }
