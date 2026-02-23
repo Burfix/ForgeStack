@@ -79,21 +79,11 @@ export default function CTASection({ className = '' }: CTASectionProps) {
   }, []);
 
   const handleDiscoveryClick = () => {
-    setDialogContent({
-      title: 'Book a Discovery Call',
-      description:
-        'Thank you for your interest! Our team will contact you within 24 hours to schedule your free discovery call.',
-    });
-    setDialogOpen(true);
+    window.location.href = 'mailto:burfix@gmail.com?subject=Discovery Call Request&body=Hi, I would like to schedule a discovery call to discuss my BI system needs.';
   };
 
   const handleEmailClick = () => {
-    setDialogContent({
-      title: 'Email Us',
-      description:
-        'You can reach us at hello@forgestackafrica.dev. We typically respond within 24 hours.',
-    });
-    setDialogOpen(true);
+    window.location.href = 'mailto:burfix@gmail.com?subject=General Inquiry';
   };
 
   return (

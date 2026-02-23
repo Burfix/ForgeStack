@@ -64,12 +64,12 @@ export default function Navigation() {
                   {link.label}
                 </button>
               ))}
-              <button
-                onClick={() => scrollToSection('#contact')}
+              <a
+                href="mailto:burfix@gmail.com?subject=Discovery Call Request&body=Hi, I would like to schedule a discovery call to discuss my BI system needs."
                 className="btn-primary text-sm"
               >
                 Book a Discovery Call
-              </button>
+              </a>
             </div>
 
             {/* Mobile Menu Button */}
@@ -99,12 +99,13 @@ export default function Navigation() {
               {link.label}
             </button>
           ))}
-          <button
-            onClick={() => scrollToSection('#contact')}
+          <a
+            href="mailto:burfix@gmail.com?subject=Discovery Call Request&body=Hi, I would like to schedule a discovery call to discuss my BI system needs."
             className="btn-primary mt-4"
+            onClick={() => setIsMobileMenuOpen(false)}
           >
             Book a Discovery Call
-          </button>
+          </a>
         </div>
       </div>
     </>
