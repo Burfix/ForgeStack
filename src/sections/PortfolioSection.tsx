@@ -86,7 +86,7 @@ const systems: System[] = [
     },
   },
   {
-    image: '/dashboard_q4_overview.jpg',
+    image: '/portfolio_preschool_app.png',
     title: 'Preschool Management App',
     description:
       'Complete preschool administration platform with student management, attendance tracking, and parent communication.',
