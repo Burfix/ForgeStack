@@ -157,7 +157,7 @@ export default function HeroSection({ className = '' }: HeroSectionProps) {
             </span>
           ))}
         </h1>
-        <p className="text-lg text-[#A6ACB8] leading-relaxed max-w-xl">
+        <p className="text-lg text-[#A6ACB8] leading-relaxed max-w-xl mb-8">
           We build production-ready systems that ingest invoices, CSVs, and scanned
           documents via OCR — compare suppliers, track compliance, and deliver
           decision dashboards — fast.
@@ -167,7 +167,7 @@ export default function HeroSection({ className = '' }: HeroSectionProps) {
       {/* CTA Row */}
       <div
         ref={ctaRef}
-        className="absolute left-[54vw] top-[74vh] w-[38vw] flex items-center gap-4"
+        className="absolute left-[54vw] top-[78vh] w-[38vw] flex items-center gap-4"
         style={{ willChange: 'transform, opacity' }}
       >
         <button
