@@ -139,7 +139,7 @@ export default function HeroSection({ className = '' }: HeroSectionProps) {
         <p className="text-lg text-[#A6ACB8] leading-relaxed max-w-xl mb-8">
           We transform your operational chaos into intelligent systems. From automated 
           document processing and supplier analytics to compliance tracking and executive 
-          dashboards — we build end-to-end business intelligence solutions that scale with 
+          dashboards, we build end-to-end business intelligence solutions that scale with 
           your growth, fast.
         </p>
       </div>
