@@ -195,12 +195,12 @@ export default function PortfolioSection({ className = '' }: PortfolioSectionPro
       {/* Portfolio Cards */}
       <div
         ref={cardsRef}
-        className="absolute left-[7vw] right-[7vw] top-[36vh] flex gap-4"
+        className="absolute left-[6vw] right-[6vw] top-[36vh] flex gap-3 overflow-visible"
       >
         {systems.map((system, i) => (
           <div
             key={i}
-            className="portfolio-card card-dark flex-1 min-w-0 h-[46vh] overflow-hidden group hover:border-[#C8FF2E]/30 transition-all duration-500"
+            className="portfolio-card card-dark flex-1 min-w-0 max-w-[22vw] h-[46vh] overflow-hidden group hover:border-[#C8FF2E]/30 transition-all duration-500"
             style={{ willChange: 'transform, opacity' }}
           >
             {/* Image */}
