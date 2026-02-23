@@ -89,13 +89,6 @@ export default function HeroSection({ className = '' }: HeroSectionProps) {
 
   const headlineWords = 'Full-Stack Business Intelligence Systems'.split(' ');
 
-  const scrollToSection = (href: string) => {
-    const element = document.querySelector(href);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
-
   return (
     <section
       ref={sectionRef}
