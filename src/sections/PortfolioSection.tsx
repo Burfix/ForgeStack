@@ -212,8 +212,8 @@ export default function PortfolioSection({ className = '' }: PortfolioSectionPro
               />
             </div>
             {/* Content */}
-            <div className="h-[40%] p-5 flex flex-col justify-between">
-              <div>
+            <div className="h-[40%] p-5 flex flex-col justify-between overflow-hidden">
+              <div className="flex-1 min-h-0">
                 <h3 className="font-['Space_Grotesk'] font-bold text-white text-base mb-2 line-clamp-2">
                   {system.title}
                 </h3>
@@ -223,7 +223,7 @@ export default function PortfolioSection({ className = '' }: PortfolioSectionPro
               </div>
               <button
                 onClick={() => handleSeeDetails(system)}
-                className="inline-flex items-center gap-2 text-[#C8FF2E] text-xs group-hover:gap-3 transition-all w-fit"
+                className="inline-flex items-center gap-2 text-[#C8FF2E] text-xs group-hover:gap-3 transition-all w-fit mt-3"
               >
                 <span>See details</span>
                 <ArrowRight size={14} />
